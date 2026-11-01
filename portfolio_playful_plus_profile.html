@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & Self Introduction</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            accent: '#06b6d4'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .dark .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* Animated Hero Gradient Background */
+        .animated-bg {
+            background: linear-gradient(-45deg, #4f46e5, #06b6d4, #ec4899, #3b82f6);
+            background-size: 400% 400%;
+            animation: gradientBg 15s ease infinite;
+        }
+
+        @keyframes gradientBg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Skill Bar Animations */
+        .skill-progress {
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+    <style>
+
+    /* ===== PLAYFUL PERSONALITY LAYER ===== */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+    :root {
+      --paper: #f5f1e8;
+      --ink: #20221f;
+      --muted: #6c6d65;
+      --pop: #ff5a36;
+      --lime: #d7f36a;
+      --blue: #5368ff;
+      --line: rgba(32,34,31,.18);
+    }
+    html, body { background: var(--paper) !important; color: var(--ink) !important; }
+    body { font-family: 'Space Grotesk', sans-serif !important; }
+    body.dark { background: #20221f !important; color: #f5f1e8 !important; }
+    .dark body { background: #20221f !important; color: #f5f1e8 !important; }
+    header.glass-nav, .dark header.glass-nav {
+      background: rgba(245,241,232,.88) !important;
+      border-color: var(--line) !important;
+      backdrop-filter: blur(14px);
+    }
+    .dark header.glass-nav { background: rgba(32,34,31,.88) !important; }
+    header a:first-child {
+      color: var(--ink) !important;
+      background: none !important;
+      -webkit-text-fill-color: currentColor !important;
+      font-weight: 700;
+      letter-spacing: -.07em;
+    }
+    header a:first-child::before { content: "✳ "; color: var(--pop); }
+    nav a { text-transform: uppercase; letter-spacing: .09em; font-family: 'DM Mono', monospace; font-size: 11px !important; }
+    nav a:hover { color: var(--pop) !important; }
+    #hero {
+      min-height: 92vh !important;
+      background: var(--paper) !important;
+      isolation: isolate;
+    }
+    .dark #hero { background: #20221f !important; }
+    #hero::before {
+      content: "INDEPENDENT\\A THINKER\\A + BUILDER";
+      white-space: pre;
+      position: absolute; left: 5vw; top: 18%;
+      font: 11px/1.7 'DM Mono', monospace;
+      letter-spacing: .12em; color: var(--muted);
+      text-align: left; transform: rotate(-5deg);
+      border: 1px solid var(--line); padding: 12px 15px;
+      border-radius: 50%; z-index: 1;
+    }
+    #hero::after {
+      content: "✳";
+      position: absolute; right: 9%; bottom: 16%;
+      font-size: clamp(70px, 12vw, 160px);
+      line-height: 1; color: var(--pop);
+      transform: rotate(-15deg);
+      animation: orbitWiggle 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes orbitWiggle { 0%,100% { transform: rotate(-15deg) translateY(0) } 50% { transform: rotate(12deg) translateY(-14px) } }
+    #hero .animated-bg { background: none !important; }
+    #hero span.inline-block {
+      background: var(--lime) !important; color: var(--ink) !important;
+      border: 1px solid var(--ink) !important; border-radius: 999px !important;
+      transform: rotate(-2deg); box-shadow: 4px 4px 0 var(--ink);
+    }
+    #hero h1 {
+      max-width: 950px; margin-inline: auto;
+      font-size: clamp(3.1rem, 8.3vw, 7.7rem) !important;
+      line-height: .91 !important; letter-spacing: -.085em !important;
+      text-transform: uppercase;
+    }
+    #hero h1 span {
+      background: none !important; color: var(--pop) !important;
+      -webkit-text-fill-color: var(--pop) !important;
+      display: inline-block; transform: rotate(-2deg);
+    }
+    #hero p { color: var(--muted) !important; max-width: 590px; font-size: 1.05rem !important; }
+    #hero a[href="#projects"] {
+      background: var(--ink) !important; color: var(--paper) !important;
+      border: 1px solid var(--ink); border-radius: 4px !important;
+      box-shadow: 5px 5px 0 var(--pop) !important;
+    }
+    #hero a[href="#projects"]:hover { transform: translate(3px,3px) !important; box-shadow: 2px 2px 0 var(--pop) !important; }
+    #hero a[href="#contact"] { border: 1px solid var(--ink) !important; border-radius: 4px !important; }
+    section:not(#hero) { position: relative; }
+    section:not(#hero) h2 {
+      text-align: left !important; font-size: clamp(2.4rem, 5vw, 4.8rem) !important;
+      letter-spacing: -.075em !important; line-height: .95;
+      text-transform: uppercase;
+    }
+    section:not(#hero) h2 + div { margin-left: 0 !important; width: 56px !important; height: 5px !important; background: var(--pop) !important; border-radius: 0 !important; }
+    #about, #projects { background: var(--paper) !important; }
+    #skills, #contact { background: #e9e5da !important; }
+    .dark #about, .dark #projects { background: #20221f !important; }
+    .dark #skills, .dark #contact { background: #292c28 !important; }
+    .glass-card, .dark .glass-card {
+      background: rgba(255,255,255,.42) !important;
+      border: 1px solid var(--line) !important;
+      border-radius: 5px !important; backdrop-filter: none !important;
+      box-shadow: 4px 4px 0 rgba(32,34,31,.12) !important;
+    }
+    .dark .glass-card { background: rgba(255,255,255,.04) !important; border-color: rgba(245,241,232,.2) !important; }
+    #about img { border-radius: 3px !important; filter: grayscale(1) contrast(1.08); }
+    #about .relative.group::after {
+      content: "THAT'S ME ↗"; position: absolute; right: -20px; bottom: 18px;
+      background: var(--lime); color: var(--ink); border: 1px solid var(--ink);
+      padding: 8px 12px; font: 11px 'DM Mono', monospace; transform: rotate(5deg);
+    }
+    #about .grid.grid-cols-2 > div { border-radius: 3px !important; text-align: left !important; }
+    #about .grid.grid-cols-2 > div:nth-child(2) { background: var(--lime) !important; color: var(--ink) !important; }
+    #about .grid.grid-cols-2 > div:nth-child(2) * { color: var(--ink) !important; }
+    #skills .skill-progress { background: var(--pop) !important; border-radius: 0 !important; }
+    #skills .w-full.bg-slate-200 { background: rgba(32,34,31,.12) !important; border-radius: 0 !important; }
+    #skills .rounded-full { border-radius: 2px !important; }
+    #skills .flex.flex-wrap.gap-2 span { border-radius: 2px !important; border: 1px solid var(--line); }
+    #projects .project-card {
+      border-radius: 4px !important; cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease !important;
+    }
+    #projects .project-card:nth-child(1) { transform: rotate(-1deg); }
+    #projects .project-card:nth-child(2) { transform: translateY(18px) rotate(1deg); }
+    #projects .project-card:nth-child(3) { transform: rotate(-.6deg); }
+    #projects .project-card:hover { transform: translateY(-9px) rotate(0deg) !important; box-shadow: 9px 10px 0 rgba(255,90,54,.28) !important; }
+    #projects .project-card img { filter: saturate(.8); }
+    #projects .filter-btn { border-radius: 3px !important; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .06em; }
+    #projects .filter-btn.active { background: var(--pop) !important; color: white !important; }
+    #contact .glass-card { box-shadow: 7px 7px 0 var(--lime) !important; }
+    #contact input, #contact textarea { border-radius: 3px !important; background: transparent !important; }
+    #contact button[type="submit"] { background: var(--pop) !important; border-radius: 3px !important; box-shadow: 5px 5px 0 var(--ink); }
+    footer { background: var(--paper) !important; border-color: var(--line) !important; }
+    .dark footer { background: #20221f !important; }
+    #projectModal .glass-card { border-radius: 5px !important; }
+    .dark .text-slate-600, .dark .text-slate-300 { color: #d0cec5 !important; }
+    @media (max-width: 700px) {
+      #hero::before { left: 5%; top: 9%; font-size: 9px; }
+      #hero::after { right: 5%; bottom: 8%; font-size: 64px; }
+      #hero h1 { font-size: clamp(3rem, 15vw, 5rem) !important; }
+      #projects .project-card:nth-child(2) { transform: none; }
+      section:not(#hero) h2 { font-size: 2.8rem !important; }
+    }
+
+    </style>
+    <style>
+
+    /* ===== EXTRA INTERACTION & EDITORIAL DETAILS ===== */
+    html { scroll-padding-top: 84px; }
+    body { cursor: auto; }
+    ::selection { background: #d7f36a; color: #20221f; }
+
+    /* Reading progress */
+    .reading-progress {
+      position: fixed; inset: 0 auto auto 0; height: 4px; width: 0;
+      background: #ff5a36; z-index: 100; transition: width .08s linear;
+    }
+
+    /* A small custom cursor accent on pointer devices */
+    .cursor-dot {
+      position: fixed; left: 0; top: 0; width: 10px; height: 10px;
+      border-radius: 50%; background: #ff5a36; pointer-events: none;
+      z-index: 120; transform: translate(-50%, -50%);
+      transition: width .18s ease, height .18s ease, background .18s ease;
+      mix-blend-mode: difference;
+    }
+    .cursor-dot.is-hovering { width: 30px; height: 30px; background: #d7f36a; }
+
+    /* Reveal sections as they enter the viewport */
+    .reveal-on-scroll {
+      opacity: 0; transform: translateY(26px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+    }
+    .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal-on-scroll { opacity: 1; transform: none; }
+      .cursor-dot { display: none; }
+    }
+
+    /* Moving editorial ticker */
+    .playful-ticker {
+      overflow: hidden; background: #d7f36a; color: #20221f;
+      border-block: 1px solid #20221f; padding: 13px 0;
+      font: 500 12px 'DM Mono', monospace; letter-spacing: .13em;
+      text-transform: uppercase; white-space: nowrap;
+    }
+    .playful-ticker-track {
+      display: inline-flex; align-items: center; gap: 28px;
+      min-width: max-content; animation: tickerMove 28s linear infinite;
+    }
+    .playful-ticker span { display: inline-flex; align-items: center; gap: 28px; }
+    .playful-ticker b { color: #ff5a36; font-size: 18px; }
+    @keyframes tickerMove { to { transform: translateX(-50%); } }
+    .playful-ticker:hover .playful-ticker-track { animation-play-state: paused; }
+
+    /* Numbered section markers */
+    section:not(#hero) .max-w-7xl,
+    section#contact .max-w-4xl { position: relative; }
+    section:not(#hero) .section-kicker {
+      display: inline-block; margin-bottom: 14px;
+      font: 11px 'DM Mono', monospace; letter-spacing: .12em;
+      color: #ff5a36; text-transform: uppercase;
+    }
+    #about .grid.md\\:grid-cols-12 { align-items: start; }
+    #about h3 { font-size: clamp(1.7rem, 3vw, 2.7rem); line-height: 1.08; letter-spacing: -.06em; }
+    #about p { max-width: 650px; }
+    #skills h3, #projects h3 { letter-spacing: -.045em; }
+    #projects .project-card { position: relative; }
+    #projects .project-card::before {
+      content: "OPEN ↗"; position: absolute; z-index: 3; top: 12px; left: 12px;
+      padding: 6px 9px; background: #d7f36a; color: #20221f;
+      border: 1px solid #20221f; font: 10px 'DM Mono', monospace;
+      opacity: 0; transform: translateY(5px); transition: .2s ease;
+    }
+    #projects .project-card:hover::before { opacity: 1; transform: translateY(0); }
+    #projects .project-card img { transition: transform .55s cubic-bezier(.2,.7,.2,1), filter .3s ease; }
+    #projects .project-card:hover img { transform: scale(1.06) rotate(-1deg); filter: saturate(1.15); }
+
+    /* Buttons feel more tactile */
+    button, a[href^="#"] { -webkit-tap-highlight-color: transparent; }
+    #contact input:focus, #contact textarea:focus {
+      outline: 2px solid #ff5a36 !important; outline-offset: 2px;
+      box-shadow: 4px 4px 0 rgba(255,90,54,.2);
+    }
+    #contact button[type="submit"]:active { transform: translate(3px,3px); box-shadow: 2px 2px 0 #20221f; }
+
+    /* Footer gets a memorable sign-off */
+    footer p::before {
+      content: "MADE WITH CURIOSITY  ✳  ";
+      display: block; margin-bottom: 7px;
+      font: 10px 'DM Mono', monospace; letter-spacing: .1em; color: #ff5a36;
+    }
+    @media (max-width: 700px) {
+      .cursor-dot { display: none; }
+      .playful-ticker { padding: 10px 0; }
+      #projects .project-card::before { opacity: 1; transform: none; }
+    }
+
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <div class="reading-progress" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#hero" class="text-xl font-bold bg-gradient-to-r from-brand-500 to-brand-accent bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+                DevPortfolio<span class="text-brand-accent">.</span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                <a href="#about" class="hover:text-brand-500 dark:hover:text-brand-accent transition-colors">About</a>
+                <a href="#skills" class="hover:text-brand-500 dark:hover:text-brand-accent transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-brand-500 dark:hover:text-brand-accent transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-brand-500 dark:hover:text-brand-accent transition-colors">Contact</a>
+            </nav>
+
+            <!-- Theme Toggle & Mobile Menu Button -->
+            <div class="flex items-center space-x-4">
+                <button id="themeToggleBtn" aria-label="Toggle Theme" class="p-2 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                    <i id="themeToggleIcon" class="fa-solid fa-moon text-lg"></i>
+                </button>
+
+                <button id="mobileMenuBtn" aria-label="Toggle Menu" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#about" class="mobile-link block py-2 text-base font-medium hover:text-brand-500">About</a>
+            <a href="#skills" class="mobile-link block py-2 text-base font-medium hover:text-brand-500">Skills</a>
+            <a href="#projects" class="mobile-link block py-2 text-base font-medium hover:text-brand-500">Projects</a>
+            <a href="#contact" class="mobile-link block py-2 text-base font-medium hover:text-brand-500">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-16">
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
+            <!-- Background Glow Elements -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-10 right-10 w-[300px] h-[300px] bg-brand-accent/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-500/10 text-brand-600 dark:text-brand-accent border border-brand-500/20 mb-6">
+                    Full-Stack Developer &amp; Automation Specialist
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Crafting Clean Code &amp;<br>
+                    <span class="bg-gradient-to-r from-brand-500 via-brand-accent to-pink-500 bg-clip-text text-transparent">
+                        Intuitive Digital Experiences
+                    </span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Hello! I'm a passionate web developer focused on creating scalable web apps, optimizing automated workflows with Python, and delivering sleek frontend design.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold bg-brand-600 hover:bg-brand-700 text-white shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all duration-300 transform hover:-translate-y-0.5">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300">
+                        Get In Touch
+                    </a>
+                </div>
+                
+                <!-- Scroll Down Indicator -->
+                <a href="#about" class="inline-flex items-center justify-center w-10 h-10 rounded-full mt-16 text-slate-400 hover:text-brand-500 transition-colors animate-bounce" aria-label="Scroll to About">
+                    <i class="fa-solid fa-chevron-down text-lg"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">About Me</h2>
+                    <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <!-- Avatar / Image Card -->
+                    <div class="md:col-span-5 flex justify-center">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-brand-accent rounded-3xl blur opacity-30 group-hover:opacity-75 transition duration-500"></div>
+                            <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden glass-card p-3 shadow-xl">
+                                <img src="https://placehold.co/400x400/4f46e5/ffffff?text=Developer+Avatar" 
+                                     alt="Developer Profile Avatar" 
+                                     class="w-full h-full object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-500"
+                                     onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=Developer'">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text & Highlights -->
+                    <div class="md:col-span-7 space-y-6">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">
+                            はじめまして、アンジーンです。
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Web制作やプログラミングに取り組みながら、日々新しいことを学んでいます。
+                            好奇心を大切に、自分らしいアイデアを形にしていくことが目標です。
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                            最近は応用情報技術者試験の合格に向けて勉強中。
+                            趣味のバドミントンも楽しみながら、少しずつできることを増やしています。
+                        </p>
+
+                        <!-- Personal Profile -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                            <div class="glass-card p-4 rounded-xl text-left">
+                                <div class="text-xs font-bold tracking-widest text-brand-500">01 / NICKNAME</div>
+                                <div class="text-xl font-bold text-slate-900 dark:text-white mt-2">アンジーン</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">ニックネーム</div>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl text-left">
+                                <div class="text-xs font-bold tracking-widest text-brand-accent">02 / HOBBY</div>
+                                <div class="text-xl font-bold text-slate-900 dark:text-white mt-2">バドミントン</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">趣味</div>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl text-left">
+                                <div class="text-xs font-bold tracking-widest text-pink-500">03 / NOW</div>
+                                <div class="text-lg font-bold text-slate-900 dark:text-white mt-2">応用情報技術者試験</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">合格に向けて勉強中</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-slate-100/50 dark:bg-slate-800/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Skills &amp; Expertise</h2>
+                    <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-10">
+                    <!-- Technical Proficiency Progress Bars -->
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl shadow-sm space-y-6">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-code text-brand-500"></i> Core Development Skills
+                        </h3>
+
+                        <!-- Skill item -->
+                        <div>
+                            <div class="flex justify-between font-semibold text-sm mb-2">
+                                <span>Web Development (HTML / CSS / JavaScript)</span>
+                                <span class="text-brand-500">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                                <div class="skill-progress h-full bg-brand-500 rounded-full" style="width: 95%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill item -->
+                        <div>
+                            <div class="flex justify-between font-semibold text-sm mb-2">
+                                <span>Modern Frameworks (Next.js / Astro / React)</span>
+                                <span class="text-brand-accent">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                                <div class="skill-progress h-full bg-brand-accent rounded-full" style="width: 85%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill item -->
+                        <div>
+                            <div class="flex justify-between font-semibold text-sm mb-2">
+                                <span>Python Automation &amp; Scripting</span>
+                                <span class="text-pink-500">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                                <div class="skill-progress h-full bg-pink-500 rounded-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill item -->
+                        <div>
+                            <div class="flex justify-between font-semibold text-sm mb-2">
+                                <span>Cloud / DevOps (AWS / Docker / Vercel)</span>
+                                <span class="text-amber-500">75%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                                <div class="skill-progress h-full bg-amber-500 rounded-full" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categorized Skill Cards & Certifications -->
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 sm:p-8 rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-layer-group text-brand-accent"></i> Tech Stack Tags
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">HTML5 / CSS3</span>
+                                <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Tailwind CSS</span>
+                                <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">JavaScript ES6+</span>
+                                <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">TypeScript</span>
+                                <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Next.js</span>
+                                <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Astro</span>
+                                <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Python 3</span>
+                                <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">FastAPI</span>
+                                <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Git / GitHub</span>
+                                <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">REST APIs</span>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 sm:p-8 rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-award text-amber-500"></i> Certifications &amp; Learning
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                                    <div>
+                                        <div class="font-semibold text-sm">AWS Certified Solutions Architect – Associate</div>
+                                        <div class="text-xs text-slate-500 dark:text-slate-400">Issued by Amazon Web Services</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                                    <div>
+                                        <div class="font-semibold text-sm">Python Automation &amp; Web Scraping Specialist</div>
+                                        <div class="text-xs text-slate-500 dark:text-slate-400">Professional Certification</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                                    <div>
+                                        <div class="font-semibold text-sm">Frontend Web Developer Certificate</div>
+                                        <div class="text-xs text-slate-500 dark:text-slate-400">Advanced React &amp; Next.js track</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects / Portfolio Section -->
+        <section id="projects" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Featured Projects</h2>
+                    <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center gap-2 mb-12" id="filterContainer">
+                    <button data-filter="all" class="filter-btn active px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-brand-600 text-white shadow-md">
+                        All
+                    </button>
+                    <button data-filter="webapp" class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all border border-slate-300 dark:border-slate-700 hover:bg-slate-200/50 dark:hover:bg-slate-800/50">
+                        Web App
+                    </button>
+                    <button data-filter="automation" class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all border border-slate-300 dark:border-slate-700 hover:bg-slate-200/50 dark:hover:bg-slate-800/50">
+                        Automation
+                    </button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="webapp" data-project-id="1">
+                        <div class="relative overflow-hidden h-48 bg-slate-800">
+                            <img src="https://placehold.co/600x400/4f46e5/ffffff?text=CardCraft+OGP" alt="CardCraft OGP Generator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 px-3 py-1 bg-brand-600 text-white text-xs font-semibold rounded-full shadow">Web App</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold group-hover:text-brand-500 transition-colors">CardCraft - OGP Generator</h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mt-2 flex-grow">
+                                A high-performance web tool that dynamically generates beautiful social media preview images (OGP cards) using custom Canvas API and Next.js.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-200/50 dark:border-slate-700/50">
+                                <span class="text-xs font-medium px-2.5 py-1 rounded bg-slate-200/60 dark:bg-slate-700/60">Next.js</span>
+                                <span class="text-xs font-medium px-2.5 py-1 rounded bg-slate-200/60 dark:bg-slate-700/60">Tailwind</span>
+                                <span class="text-xs font-medium px-2.5 py-1 rounded bg-slate-200/60 dark:bg-slate-700/60">Canvas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="webapp" data-project-id="2">
+                        <div class="relative overflow-hidden h-48 bg-slate-800">
+                            <img src="https://placehold.co/600x400/06b6d4/ffffff?text=Jam+Music+App" alt="Jam App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 px-3 py-1 bg-brand-accent text-white text-xs font-semibold rounded-full shadow">Web App</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold group-hover:text-brand-accent transition-colors">Jam App - Collaborative Audio</h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mt-2 flex-grow">
+                                Real-time interactive web music player and collaborative sound pad using Web Audio API and Astro framework.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-200/50 dark:border-slate-700/50">
+                                <span class="text-xs font-medium px-2.5 py-1 rounded bg-slate-200/60 dark:bg-slate-700/60">Astro</span>
+                                <span class="text-xs font-medium px-2.5 py-1 rounded bg-slate-200/60 dark:bg-slate-700/60">Web Audio API</span>
+                                <span class="text-xs font-medium px-2.5 py-1 rounded bg-slate-200/60 dark:bg-slate-700/60">JS ES6</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="automation" data-project-id="3">
+                        <div class="relative overflow-hidden h-48 bg-slate-800">
+                            <img src="https://placehold.co/600x400/ec4899/ffffff?text=Py+AutoScraper" alt="Python Scraping & Bot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 px-3 py-1 bg-pink-500 text-white text-xs font-semibold rounded-full shadow">Automation</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold group-hover:text-pink-500 transition-colors">PyAutoScraper &amp; Bot</h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mt-2 flex-grow">
+                                Automated web data extraction pipeline using Python, Playwright, and pandas with scheduled Discord webhook notifications.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-200/50 dark:border-slate-700/50">
+                                <span class="text-xs font-medium px-2.5 py-1 rounded bg-slate-200/60 dark:bg-slate-700/60">Python</span>
+                                <span class="text-xs font-medium px-2.5 py-1 rounded bg-slate-200/60 dark:bg-slate-700/60">Playwright</span>
+                                <span class="text-xs font-medium px-2.5 py-1 rounded bg-slate-200/60 dark:bg-slate-700/60">FastAPI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-slate-100/50 dark:bg-slate-800/30">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Get In Touch</h2>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2">Have a project in mind or want to talk? Send me a message!</p>
+                    <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 sm:p-10 shadow-xl">
+                    <form id="contactForm" class="space-y-6" novalidate>
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <!-- Name Field -->
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Your Name <span class="text-red-500">*</span></label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe"
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 focus:outline-none focus:ring-2 focus:ring-brand-500 transition">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="nameError">Please enter your name.</p>
+                            </div>
+                            <!-- Email Field -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2">Your Email <span class="text-red-500">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com"
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 focus:outline-none focus:ring-2 focus:ring-brand-500 transition">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="emailError">Please enter a valid email address.</p>
+                            </div>
+                        </div>
+
+                        <!-- Subject -->
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry"
+                                class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 focus:outline-none focus:ring-2 focus:ring-brand-500 transition">
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message <span class="text-red-500">*</span></label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Hello, I would like to discuss..."
+                                class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 focus:outline-none focus:ring-2 focus:ring-brand-500 transition"></textarea>
+                            <p class="text-red-500 text-xs mt-1 hidden" id="messageError">Please enter a message.</p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full py-4 rounded-xl font-bold bg-brand-600 hover:bg-brand-700 text-white shadow-lg shadow-brand-500/25 transition duration-300 flex items-center justify-center gap-2">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success Alert Banner -->
+                    <div id="successBanner" class="hidden mt-6 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-600 dark:text-green-400 text-center font-medium">
+                        <i class="fa-solid fa-circle-check mr-2"></i> Thank you! Your message has been sent successfully.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="glass-card max-w-2xl w-full rounded-2xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800" id="modalContent">
+            <div class="relative h-64 bg-slate-800">
+                <img id="modalImage" src="" alt="Project Image" class="w-full h-full object-cover">
+                <button id="closeModalBtn" aria-label="Close Modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-900/70 text-white hover:bg-slate-900 flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 id="modalTitle" class="text-2xl font-bold"></h3>
+                    <span id="modalCategory" class="px-3 py-1 bg-brand-500 text-white text-xs font-semibold rounded-full"></span>
+                </div>
+                <p id="modalDescription" class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed"></p>
+                <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex justify-end gap-3">
+                    <button id="closeModalSecondary" class="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Close</button>
+                    <a id="modalDemoLink" href="#" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold transition flex items-center gap-2">
+                        <span>Live Demo</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-8 bg-white dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-slate-500 dark:text-slate-400">
+                &copy; <span id="year"></span> DevPortfolio. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-6">
+                <a href="https://github.com" target="_blank" class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" aria-label="GitHub">
+                    <i class="fa-brands fa-github text-xl"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter text-xl"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set dynamic current year
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // --- 1. Theme Toggle (Dark / Light Mode) ---
+            const themeToggleBtn = document.getElementById('themeToggleBtn');
+            const themeToggleIcon = document.getElementById('themeToggleIcon');
+            const htmlElement = document.documentElement;
+
+            function updateThemeUI(isDark) {
+                if (isDark) {
+                    htmlElement.classList.add('dark');
+                    themeToggleIcon.className = 'fa-solid fa-sun text-lg text-amber-400';
+                } else {
+                    htmlElement.classList.remove('dark');
+                    themeToggleIcon.className = 'fa-solid fa-moon text-lg text-slate-600';
+                }
+            }
+
+            // Check preferred dark mode setting
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            updateThemeUI(systemPrefersDark);
+
+            themeToggleBtn.addEventListener('click', () => {
+                const isDark = htmlElement.classList.contains('dark');
+                updateThemeUI(!isDark);
+            });
+
+            // --- 2. Mobile Menu Toggle ---
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // --- 3. Project Filter System ---
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button styles
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-brand-600', 'text-white', 'shadow-md');
+                        b.classList.add('border', 'border-slate-300', 'dark:border-slate-700');
+                    });
+                    btn.classList.add('bg-brand-600', 'text-white', 'shadow-md');
+                    btn.classList.remove('border', 'border-slate-300', 'dark:border-slate-700');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filterValue === 'all' || category === filterValue) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // --- 4. Interactive Project Modal / Lightbox ---
+            const projectData = {
+                '1': {
+                    title: 'CardCraft - OGP Card Generator',
+                    category: 'Web App',
+                    description: 'CardCraft is an interactive web tool designed to generate high-resolution OGP (Open Graph Protocol) images instantly. Users can customize typography, pick background themes, and render downloadable PNG preview cards powered by Canvas API.',
+                    image: 'https://placehold.co/600x400/4f46e5/ffffff?text=CardCraft+OGP+Preview'
+                },
+                '2': {
+                    title: 'Jam App - Collaborative Audio Player',
+                    category: 'Web App',
+                    description: 'Jam App provides real-time sound playback and synthesis through the browser using Web Audio API. Built on Astro for lightweight performance, it allows users to jam together and trigger sample loops effortlessly.',
+                    image: 'https://placehold.co/600x400/06b6d4/ffffff?text=Jam+Music+App+Preview'
+                },
+                '3': {
+                    title: 'PyAutoScraper & Discord Bot',
+                    category: 'Automation',
+                    description: 'A Python-driven automation pipeline designed for web scraping and scheduled metrics updates. It extracts structured data from dynamic websites using Playwright and dispatches real-time summary alerts to Discord webhooks.',
+                    image: 'https://placehold.co/600x400/ec4899/ffffff?text=PyAutoScraper+Bot+Preview'
+                }
+            };
+
+            const projectModal = document.getElementById('projectModal');
+            const modalContent = document.getElementById('modalContent');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalCategory = document.getElementById('modalCategory');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalImage = document.getElementById('modalImage');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const closeModalSecondary = document.getElementById('closeModalSecondary');
+
+            function openModal(id) {
+                const data = projectData[id];
+                if (!data) return;
+
+                modalTitle.textContent = data.title;
+                modalCategory.textContent = data.category;
+                modalDescription.textContent = data.description;
+                modalImage.src = data.image;
+
+                projectModal.classList.remove('opacity-0', 'pointer-events-none');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }
+
+            function closeModal() {
+                projectModal.classList.add('opacity-0', 'pointer-events-none');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+            }
+
+            projectCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const id = card.getAttribute('data-project-id');
+                    openModal(id);
+                });
+            });
+
+            closeModalBtn.addEventListener('click', closeModal);
+            closeModalSecondary.addEventListener('click', closeModal);
+            projectModal.addEventListener('click', (e) => {
+                if (e.target === projectModal) closeModal();
+            });
+
+            // --- 5. Contact Form Validation & UI Feedback ---
+            const contactForm = document.getElementById('contactForm');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const messageError = document.getElementById('messageError');
+            const successBanner = document.getElementById('successBanner');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+                // Validate Name
+                if (!nameInput.value.trim()) {
+                    nameError.classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    nameError.classList.add('hidden');
+                }
+
+                // Validate Email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    emailError.classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    emailError.classList.add('hidden');
+                }
+
+                // Validate Message
+                if (!messageInput.value.trim()) {
+                    messageError.classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    messageError.classList.add('hidden');
+                }
+
+                if (isValid) {
+                    successBanner.classList.remove('hidden');
+                    contactForm.reset();
+                    setTimeout(() => {
+                        successBanner.classList.add('hidden');
+                    }, 5000);
+                }
+            });
+        });
+    </script>
+
+    <script>
+      // Tiny playful detail: project cards lean toward the pointer on desktop.
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        document.querySelectorAll('.project-card').forEach((card) => {
+          card.addEventListener('mousemove', (event) => {
+            const rect = card.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width - 0.5;
+            const y = (event.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform = `translateY(-7px) perspective(700px) rotateX(${-y * 4}deg) rotateY(${x * 5}deg)`;
+          });
+          card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+        });
+      }
+    </script>
+
+
+    <script>
+      (() => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Reading progress indicator
+        const progress = document.querySelector('.reading-progress');
+        const updateProgress = () => {
+          const max = document.documentElement.scrollHeight - window.innerHeight;
+          const amount = max > 0 ? (window.scrollY / max) * 100 : 0;
+          progress.style.width = `${amount}%`;
+        };
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+
+        // Custom cursor accent (desktop only)
+        const cursor = document.querySelector('.cursor-dot');
+        if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+          window.addEventListener('pointermove', (event) => {
+            cursor.style.left = `${event.clientX}px`;
+            cursor.style.top = `${event.clientY}px`;
+          }, { passive: true });
+          document.querySelectorAll('a, button, .project-card, input, textarea').forEach((item) => {
+            item.addEventListener('pointerenter', () => cursor.classList.add('is-hovering'));
+            item.addEventListener('pointerleave', () => cursor.classList.remove('is-hovering'));
+          });
+        } else {
+          cursor.remove();
+        }
+
+        // Reveal content gently as it enters the screen
+        if (!reduceMotion && 'IntersectionObserver' in window) {
+          const revealTargets = document.querySelectorAll(
+            '#about h2, #about .grid.md\\\\:grid-cols-12 > *, #skills h2, #skills .grid > *, #projects h2, #projects .project-card, #contact h2, #contact .glass-card'
+          );
+          revealTargets.forEach((element, index) => {
+            element.classList.add('reveal-on-scroll');
+            element.style.transitionDelay = `${(index % 3) * 80}ms`;
+          });
+          const observer = new IntersectionObserver((entries, currentObserver) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                currentObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.12 });
+          revealTargets.forEach((element) => observer.observe(element));
+        }
+
+        // Add a moving strip between the intro and the About section
+        const about = document.querySelector('#about');
+        if (about && !document.querySelector('.playful-ticker')) {
+          const ticker = document.createElement('div');
+          ticker.className = 'playful-ticker';
+          ticker.setAttribute('aria-label', 'Curiosity, experiments, ideas and making things');
+          ticker.innerHTML = `
+            <div class="playful-ticker-track" aria-hidden="true">
+              <span>CURIOUS BY DEFAULT <b>✳</b> MAKE • BREAK • LEARN <b>✳</b> IDEAS INTO INTERACTIONS <b>✳</b> ALWAYS EXPERIMENTING <b>✳</b></span>
+              <span>CURIOUS BY DEFAULT <b>✳</b> MAKE • BREAK • LEARN <b>✳</b> IDEAS INTO INTERACTIONS <b>✳</b> ALWAYS EXPERIMENTING <b>✳</b></span>
+            </div>`;
+          about.parentNode.insertBefore(ticker, about);
+        }
+
+        // Give each main section a small editorial index
+        const sectionLabels = [
+          ['#about', '01 / A LITTLE ABOUT ME'],
+          ['#skills', '02 / THINGS I LIKE TO BUILD'],
+          ['#projects', '03 / SELECTED EXPERIMENTS'],
+          ['#contact', '04 / SAY HELLO']
+        ];
+        sectionLabels.forEach(([selector, label]) => {
+          const section = document.querySelector(selector);
+          const heading = section && section.querySelector('h2');
+          if (heading && !heading.previousElementSibling?.classList.contains('section-kicker')) {
+            const kicker = document.createElement('div');
+            kicker.className = 'section-kicker';
+            kicker.textContent = label;
+            heading.parentNode.insertBefore(kicker, heading);
+          }
+        });
+      })();
+    </script>
+
+</body>
+</html>
